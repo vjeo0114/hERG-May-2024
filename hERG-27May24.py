@@ -121,8 +121,8 @@ plt.ylim([min_dim, max_dim])
 plt.xlim([min_dim, max_dim])
 plt.plot(x, a*x+b)
 plt.title("Phenethylamine Psychedelic Activity Prediction")
-plt.xlabel('Test Set Log A Values')
-plt.ylabel('Predicted LogA Values')
+plt.xlabel('Test Set pIC50 Values')
+plt.ylabel('Predicted pIC50 Values')
 # The optional line below saves the figure to file as an eps vector graphic as required in many journals.
 # If you can't open in try using Acrobat, it will be able to read the postcript.
 plt.savefig('phenethylamine_predictions.eps', format='eps')
