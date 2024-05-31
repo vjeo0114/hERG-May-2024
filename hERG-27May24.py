@@ -88,7 +88,7 @@ from sklearn.model_selection import train_test_split
 from sklearn import set_config
 
 xtrain, xtest, ytrain, ytest = train_test_split(x, y, test_size=.15)
-# Since the logA is a scalar variable (non-binary) we want to do some kind of regression to model it.
+# Since the pIC50 is a scalar variable (non-binary) we want to do some kind of regression to model it.
 #https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html
 
 rfr = RandomForestRegressor(random_state=1)
@@ -125,7 +125,7 @@ plt.xlabel('Test Set pIC50 Values')
 plt.ylabel('Predicted pIC50 Values')
 # The optional line below saves the figure to file as an eps vector graphic as required in many journals.
 # If you can't open in try using Acrobat, it will be able to read the postcript.
-plt.savefig('phenethylamine_predictions.eps', format='eps')
+plt.savefig('hERG-Practice.eps', format='eps')
 
 print("Testset Prediction Performance")
 print("------------------------------")
@@ -138,15 +138,15 @@ print("Testset Rsquare:", rsquare)
 # joblib can be used to save and load trained models.
 # This is called pickelling the model so they are called dot pkl files.
 import joblib
-joblib.dump(rfr, 'psychedelics.pkl')
+joblib.dump(rfr, 'hERG-Practice.pkl')
 
 # load the model
-model = joblib.load('psychedelics.pkl')
+model = joblib.load('hERG-Practice.pkl')
 
 # Here we use the mol2fp function from above to convert a smiles string into a morgan fingerprint with radius 2.
 test_smi = ("CCCNCCCCC")
 m = mol2fp(Chem.MolFromSmiles(test_smi))
 m
 
-# Finally, we use model.predict to output a predicted value for logA.
+# Finally, we use model.predict to output a predicted value for pIC50.
 model.predict([m])
