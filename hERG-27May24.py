@@ -121,7 +121,7 @@ plt.scatter(x, y)
 plt.ylim([min_dim, max_dim])
 plt.xlim([min_dim, max_dim])
 plt.plot(x, a*x+b)
-plt.title("Phenethylamine Psychedelic Activity Prediction")
+plt.title("pIC50 Prediction")
 plt.xlabel('Test Set pIC50 Values')
 plt.ylabel('Predicted pIC50 Values')
 # The optional line below saves the figure to file as an eps vector graphic as required in many journals.
