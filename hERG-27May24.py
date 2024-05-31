@@ -7,7 +7,8 @@ This is a temporary script file.
 #First we extract data from dataset
 #Although Colab can mount your GoogleDrive it is a pain and actually quicker to access files from your Github account.
 import pandas as pd
-df = pd.read_excel("Supplementary.xlsx")
+# df = pd.read_excel("Supplementary.xlsx")
+df = pd.read_excel("https://github.com/vjeo0114/hERG-May-2024/blob/main/Supplementary.xlsx")
 print(df.info())
 df.head(2)
 
